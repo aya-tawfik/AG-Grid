@@ -24,15 +24,17 @@ public class study_ws extends base_study{
 		
 		AndroidDriver<AndroidElement> driver= Capabilities_study();
 		ArrayList<String> contexts = new ArrayList(driver.getContextHandles());
+		System.out.print("1");
         for (String context : contexts) {
             if (!context.equals("NATIVE_APP")) {
+            	System.out.print("2");
                 System.out.print(context);
 //                return context;
                 }
-            Thread.sleep(1000);
+            //Thread.sleep(1000);
             
-            driver.context(context);
-          driver.get("https://cloudgrey.io");
+         //   driver.context(context);
+      //    driver.get("https://cloudgrey.io");
             
             //driver.get("www.nagwa.com/");
         }
