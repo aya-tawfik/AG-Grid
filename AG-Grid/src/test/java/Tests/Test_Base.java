@@ -3,13 +3,13 @@ package Tests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import java.util.concurrent.TimeUnit;
 
 public class Test_Base {
 
-  // private WebDriver driver;
    static ThreadLocal<WebDriver> driver=new ThreadLocal<>();
 
      @BeforeTest
@@ -28,8 +28,8 @@ public void Test_Base()
       return driver.get();
    }
 
-   //@AfterTest
-    public void closedriver()
+   @AfterTest
+    public void closeDriver()
    {
        getDriver().quit();
    }

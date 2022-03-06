@@ -22,18 +22,20 @@ public class Page_Base {
         Element.click();
     }
 
-    public static void entertext(WebElement element, String text)
+    public static void enterText(WebElement element, String text)
     {
         element.sendKeys(text);
     }
 
-    public static void scrollToButton()
+
+    public static void zoomout()
+
     {
-        jse.executeScript("scrollBy(0,2000)");
+        jse.executeScript("document.body.style.zoom='60%'");
     }
 
-    public static void scrollToUp()
-    {
-        jse.executeScript("scrollBy(0,2000)");
+
+    public static void scrollToView(WebElement element) {
+        jse.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 }
